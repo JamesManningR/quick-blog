@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Maker-Blog | <%= page %></title>
+	<link rel="stylesheet" href="/css/stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+<header>
+	<a href="/">
+		<img src="../imgs/Pencil-Pen-100px.png" alt="Company Logo" class="logo"> 
+	</a>
+	
+	<% if (currentUser) { %>
+		<a href="../logout" class="headerElement" id="logout">Logout</a>
+		<a href="/profile/<%=currentUser._id%>" class="headerElement">Your Profile</a>
+	<% } else { %>
+		<a href="../login" class="headerElement">Log in</a>
+	<%	}%>
+</header>

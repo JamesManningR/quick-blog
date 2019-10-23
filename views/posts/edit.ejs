@@ -1,0 +1,25 @@
+<%-include ../partials/header.ejs%>
+
+<div class="container" id="postPage">
+<div id="logger">
+	
+		<h1 class="postTitle" id="<%=post.id%>"><%=post.title%><i class="fa fa-clipboard-list"></i></h1>
+		<ul>
+			<% logs.forEach(function(log){ %>
+			<li class="log" id="<%=log.id%>">
+				<p>
+					<span class="delete">
+						<i class="fa fa-trash"></i>
+					</span>
+					<%=formatDate.default(log.text, log.date)%>
+				</p>
+			</li>
+			<% }); %>
+		</ul>
+		<input type="text" id="newLogText" text="" placeholder="Add New Log">
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/post.js"></script>
+
+<%- include ../partials/footer.ejs %>

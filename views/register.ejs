@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs', {page: "Register"}) %>
+
+<div class="container accessPage">
+	<form class="accessForm" action="/register" method="post">
+	
+		<div class="accessHeader">
+			<img src="../imgs/Pencil-Pen-100px.png" alt="pencil and hammer logo" class="logo">
+			<h2>Register</h2>
+		</div>
+		<input type="text" name="username" placeholder="Username" required>
+		<input type="password" id="password" name="password" placeholder="Password" required>
+		<input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm
+ Password" required>
+		<button class="noClick" id="userSubmit" type=submit>Register</button>
+	</form>
+</div>
+
+<script src="js/newPage.js"></script>
+
+<%- include partials/footer.ejs %>

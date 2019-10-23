@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs', {page: "Login"}) %>
+
+<div class="container accessPage">
+
+	<div class="accessForm">
+		<div class="userHeader">
+			<img src="../imgs/Pencil-Pen-100px.png" alt="pencil and hammer logo" class="logo">
+			<h2>Welcome to Maker-Blog!</h2>
+		</div>
+		<form action="/login" method="post">
+			<input type="text" name="username" placeholder="Username">
+			<input type="password" name="password" placeholder="Password">
+			<button id="userSubmit" type=submit>Log in</button>
+		</form>
+		<button onclick="window.location='register';" href="register">Register</button>
+	</div>
+</div>
+
+
+<%- include partials/footer.ejs %>

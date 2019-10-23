@@ -1,0 +1,621 @@
+* {
+	margin: 0;
+}
+
+body {
+	font-family: roboto;
+
+	margin: 0;
+
+	color: #fafafa;
+	background-image: url(../imgs/maker-pattern.png), -webkit-gradient(linear, left top, right top, from(#00cca5), to(#53e0d7));
+	background-image: url(../imgs/maker-pattern.png), linear-gradient(to right, #00cca5, #53e0d7);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: 150px 150px, auto;
+}
+
+/*======================================
+================Header==================
+========================================*/
+
+header {
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	margin-bottom: 20px;
+
+	background-color: #f0fafa;
+	-webkit-box-shadow: 0 2px 5px #03030333;
+	box-shadow: 0 2px 5px #03030333;
+}
+
+header .logo {
+	height: 40px;
+	margin: 5px;
+	margin-left: 20px;
+}
+
+header .headerElement {
+	float: right;
+
+	padding: 14px;
+	padding-right: 20px;
+
+	text-decoration: none;
+}
+
+header .headerElement:visited {
+	color: #111;
+}
+
+/*======================================
+================Footer==================
+========================================*/
+
+footer {
+	width: 100%;
+	height: 100px;
+
+	border-top: 5px solid #fb0;
+	background: #f0fafa;
+	-webkit-box-shadow: 0 -2px 4px black;
+	box-shadow: 0 -2px 5px #03030333;
+}
+
+/*======================================
+===============General==================
+========================================*/
+
+.modal{
+	display: none;
+}
+
+.full-width {
+	margin: 0;
+
+	width: 100vw;
+}
+
+.container {
+	min-height: calc(100vh - 175px);
+}
+
+h1,
+h2 {
+	padding: 10px;
+	background-color: #222F37;
+	color: #fafafa;
+}
+
+.dark-bg {
+	color: #fafafa;
+}
+
+.fullWidthCollector {
+	padding-left: 0;
+
+	background-color: #00D4A0;
+}
+
+.fullWidthButton {
+	font-size: 20px;
+	font-weight: 500;
+
+	width: 100%;
+	height: 75px;
+	margin: 0 auto;
+	padding: none;
+
+	text-align: center;
+
+	color: white;
+	border: 0;
+	background-color: #00D4A0;
+}
+
+.createNew {
+	height: 75px;
+}
+
+.createNew input[type="text"] {
+	font-size: 20px;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 50px;
+	background: none;
+	border: none;
+	color: #fafafa;
+}
+
+.createNew input[type="submit"] {
+	height: 25px;
+	width: 100%;
+	border: none;
+	padding: 0;
+	background-color: #009F78;
+	color: #fafafa;
+}
+
+/*======================================
+=================Home===================
+========================================*/
+
+.homeText {
+	background-color: #FB0;
+	-webkit-box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.38);
+	box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.38);
+
+	padding: 15px;
+
+	position: absolute;
+	left: 20%;
+}
+
+.about {
+	padding-top: 25px;
+	display: grid;
+	grid-template-areas: 'card card card';
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	color: #111;
+	background-color: #F6F6F6;
+	height: 200px;
+}
+
+.card {
+	margin: 0 40px;
+	width: 150px;
+	text-align: center;
+}
+
+.card img {
+	height: 125px;
+}
+
+
+/*======================================
+=================404====================
+========================================*/
+.f04page img {
+	height: 400px;
+}
+
+.f04msg {
+	display: block;
+	width: 400px;
+	color: #00CCA5;
+	background-color: #F0FAFA;
+	padding: 40px;
+	border-radius: 40px;
+	;
+	margin: 0 auto;
+}
+
+.f04Text {
+	text-align: right;
+}
+
+
+/*======================================
+===========Login/Register===============
+========================================*/
+
+.container.accessPage {
+	font-family: 'Roboto Condensed', sans-serif;
+	display: block;
+
+	width: 400px;
+	margin: 0 auto;
+
+	text-align: center;
+}
+
+.accessPage h2 {
+	margin-bottom: 12px;
+}
+
+.accessForm {
+	width: 300px;
+	margin: 40px auto;
+	padding: 20px 0;
+
+	color: #fff;
+	border-radius: 8px;
+	background: #f0fafa;
+	-webkit-box-shadow: 0 0 32px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 32px rgba(0, 0, 0, .5);
+}
+
+.accessForm * {
+	font-size: 24px;
+	line-height: 50px;
+
+	clear: both;
+
+	margin: 0 auto;
+}
+
+.accessForm input {
+	width: 230px;
+	height: 40px;
+	margin-bottom: 5px;
+	padding: 5px 10px;
+
+	border: 0;
+	border-bottom: 2px solid #dadada;
+	background: #0001;
+}
+
+.accessForm input:first-of-type {
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+}
+
+.accessForm input:last-of-type {
+	border-bottom-right-radius: 16px;
+	border-bottom-left-radius: 16px;
+}
+
+.accessPage button {
+	font-size: 15px;
+	line-height: normal;
+
+	width: 100px;
+	height: 30px;
+	margin-bottom: 10px;
+	cursor: pointer;
+
+	color: white;
+	border: none;
+	border-radius: 20px;
+	background: #fb0;
+}
+
+.accessPage button:hover {
+	background-color: #e6a800;
+}
+
+#userSubmit {
+	width: 150px;
+}
+
+.accessForm input.noMatch{
+	border: 2px solid red;
+}
+
+.accessForm button.noClick{
+	background-color: #f9db89;
+	pointer-events: none;
+}
+
+/*======================================
+==============User Page=================
+========================================*/
+
+.profilePage {
+	display: grid;
+
+	grid-template-areas: 'bio projects'
+		'bio projects';
+	grid-gap: 30px;
+
+	margin: 0 auto;
+	width: 900px;
+}
+
+.userInfo {
+	width: 200px;
+	padding: 10px 25px;
+
+	text-align: center;
+
+	color: #666;
+	background-color: #f0fafa;
+}
+
+.userInfo h2,
+.userInfo h3,
+.userInfo h4 {
+	margin: 5px 0;
+}
+
+#avatarContainer{
+	position: relative;
+}
+
+#avatar{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+	
+#avatarContainer:hover #editAvatar{
+	display: inline-block;
+}
+
+#editAvatar, #imageUpload i, .delete, .deleteProject {
+	cursor: pointer;
+}
+
+.userInfo #editAvatar {
+	display: none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+#avatarUpload{
+	position: absolute;
+	top: -50px;
+	right: -300px;
+}
+
+#avatarUpload i{
+	position: absolute;
+	top: -1.5px;
+	right: 0;
+	color: #666;
+}
+
+.userInfo .bio {
+	text-align: left;
+}
+
+#bioForm{
+	display: none;
+}
+
+.bio .addBio{
+	height: 81px;
+	
+	cursor: pointer;
+}
+
+.bio .editBioWrapper{
+	position: relative;
+}
+
+.bio .editBioWrapper:hover #editBio{
+	display: block;
+}
+
+.bio #editBio:hover{
+	background-color: #333;
+	color: #efefef;
+}
+
+.bio #editBio{
+	display: none;
+	padding: 2px;
+	border-radius: 4px;
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	cursor: pointer;
+}
+
+.bio #bioText{
+	width: 100%;
+	border: 0;
+	padding: 0;
+}
+
+#bioForm button{
+	height: 25px;
+	margin-left: 2px;
+	margin-right: 0;
+	border: 0;
+	
+	float: right;
+	color: white;
+	border: 0;
+	background-color: #00D4A0;
+	
+	cursor: pointer;
+}
+
+#bioForm #bioCancel{
+	color: #F5F6F7;
+	background-color: #ccd0d5;
+}
+
+.projectSection {
+	width: 630px;
+	margin-left: 0;
+
+	color: #666;
+	background-color: #f0fafa;
+}
+
+.projectRow {
+	display: grid;
+
+	margin: 20px;
+
+	grid-area: 'project',
+		'project';
+}
+
+.projectRow {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	margin: 15px 0;
+	padding: 10px 20px;
+
+	background-color: #1F2F38;
+
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.started {
+	margin-right: 10px;
+}
+
+.project {
+	margin: 0 20px;
+	background-color: white;
+	border-bottom: 2px solid #1B2F39;
+}
+
+.deleteProject{
+	opacity: 0;
+	justify-content: center;
+	vertical-align: middle;
+	align-content: center;
+	text-align: center;
+	border-radius: 3px;
+	height: 25px;
+	width: 25px;
+	
+	transition-duration: 0.25s;
+	transition-delay: 0.1s;
+}
+
+.project:hover .deleteProject{
+	opacity: 100;
+	background-color: #bf393d;
+	color: #F6F6F6;
+}
+
+.postRow {
+	display: grid;
+
+	width: 100%;
+	margin: 10px;
+	margin-bottom: 5px;
+
+	grid-template-areas: 'lastPost postCount status';
+	grid-gap: 10px;
+}
+
+.postRow .lastPost,
+.postRow .postCount,
+.postRow .status {
+	padding: 5px;
+
+	border: 2px solid #00cca5;
+}
+
+.lastPost {
+	width: 325px;
+	margin-bottom: 10px;
+}
+
+.status,
+.postCount {
+	width: 87px;
+	height: 87px;
+	margin-bottom: 10px;
+}
+
+/*======================================
+============Project Page================
+========================================*/
+
+
+.container.projectPage {
+	padding-top: 0;
+	width: 700px;
+	margin: 60px auto;
+	background-color: #F0FAFA;
+	color: #222
+}
+
+.post {
+	border-bottom: 2px solid #1A212D;
+	margin: 5px;
+}
+
+/*======================================
+=============Logger Page================
+========================================*/
+
+.container #logger {
+	width: 750px;
+	margin: 0 auto;
+
+	background-color: #F0FAFA;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+	box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+}
+
+.postTitle {
+	font-size: 24px;
+	font-weight: 400;
+
+	margin: 0;
+	padding 10px 20px;
+}
+
+#logger .fa-plus {
+	float: right;
+}
+
+#newLogText {
+	font-size: 18px;
+
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 13px 13px 13px 20px;
+
+	color: #2980b9;
+	border: 3px solid rgba(0, 0, 0, 0);
+	background-color: #f7f7f7;
+}
+
+#newLogText:focus {
+	border: 3px solid #2980b9;
+	outline: none;
+}
+
+#logger ul {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+#logger li {
+	line-height: 40px;
+
+	min-height: 40px;
+
+	word-break: break-all;
+
+	color: #666;
+	background-color: #fff;
+}
+
+#logger li:nth-child(2n) {
+	background-color: #f7f7f7;
+}
+
+#logger li .delete {
+	display: inline-block;
+
+	height: 100%;
+	width: 40px;
+	margin-right: 20px;
+
+	-webkit-transition: .1s linear;
+	transition: .1s linear;
+	text-align: center;
+
+	opacity: 0;
+	color: #fff;
+	background: #e74c3c;
+}
+
+#logger li:hover .delete {
+	opacity: 1.0;
+}

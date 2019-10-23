@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs'); %>
+
+<div class="container projectPage">
+	<h1>
+		<%= project.name %>
+	</h1>
+	<p>Project Creator: <a href="../profile/<%=project.author._id%>">
+			<%= projectAuthor %></a></p>
+	
+	<div class="fullWidthCollector">
+			<button class="fullWidthButton modalCreator" id="newProject">Add a new post</button>
+			<div class="modal createNew" id="projectForm">
+				<form action="<%=project.id%>/posts" method="post">
+					<input type="hidden" name="id" value="<%=project.id%>">
+					<input type="text" name="postName" id="nameEntry" autocomplete="off" required>
+					<input type="submit" value="Create Post">
+				</form>
+			</div>
+		</div>
+
+
+	<%if (!posts || posts.length == 0){ %>
+	<p>No posts yet</p>
+	<%} else { %>
+	<% posts.forEach(post => { %>
+		<div class="post" id="<%=post.id%>">
+			<h4>
+				<a href="<%=project.id%>/posts/<%= post.id%>"><%=post.title%></a>
+				<span class="deletePost"><i class="fa fa-trash"></i></span>
+			</h4>
+			<% if (post.logs != ""){%>
+				<p>Last log: <%=formatDate.toDateAndTime(post.logs[post.logs.length - 1].date)%></p>
+			<%}else{%>
+				<p>No Logs</p>
+			<%}%>
+
+		</div>
+	<%})};%>
+</div>
+
+<script type="text/javascript" src="/js/newPage.js"></script>
+<script type="text/javascript" src="/js/post.js"></script>
+
+<%- include("../partials/footer.ejs"); %>

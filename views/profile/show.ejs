@@ -1,0 +1,143 @@
+<%function formatDate(inDate){
+		var dd = inDate.getDate();
+		var mm = inDate.getMonth() + 1; //January is 0!
+		var yyyy = inDate.getFullYear();
+
+		if (dd < 10) {
+		  dd = '0' + dd;
+		} 
+		if (mm < 10) {
+		  mm = '0' + mm;
+		} 
+		var outDate = dd + '/' + mm + '/' + yyyy;
+		return outDate;
+	}
+
+	const statusnames = ['Complete', 'Active', 'Posponed'] 
+%>
+
+<%- include('../partials/header.ejs'); %>
+<div class="container profilePage">
+	<section class="userInfo">
+
+		<div id="avatarContainer">
+			<img src="<%=user.avatar%>" alt="Profile Picture" onerror="this.src='/imgs/defaultAvatar.png'" id="avatar">
+
+			<%if(currentUser && user.id === currentUser.id){%>
+			<span id="editAvatar"><i class="fas fa-2x fa-pen-square"></i></span>
+			<div class="modal" id="imageUpload">
+				<form id="avatarUpload" class="accessForm" action="/profile/img/<%=user._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+					<i class="fa fa-window-close" alt="closeForm"></i>
+					<input type="file" name="avatar">
+					<button type="submit">Upload</button>
+				</form>
+			</div>
+			<%}%>
+		</div>
+
+		<h2 class="username">
+			<%=user.username%>
+		</h2>
+		<div class="bio">
+			<%if (user.id == currentUser._id){%>
+				<div class="editBioWrapper">
+				<%if (typeof user.bio === 'undefined'){%>
+						<button class="fullWidthButton addBio">Add a bio <i class="fas fa-plus"></i></button>
+				<%} else {%>
+					<h4>Bio</h4>
+					<p>
+						<%=user.bio%>
+					</p>
+					<i id="editBio" class="fas fa-pencil-alt"></i>
+				<%}%>
+				</div>
+				<form class="modal" id="bioForm" action="/profile/<%=user._id%>?_method=PUT" method="post">
+					<textarea id="bioText" type="text" name="user[bio]" rows="4" placeholder="Tell the world about your projects!"><%=user.bio%></textarea>
+					<button type="submit">Save</button>
+					<button id="bioCancel" type="button">Cancel</button>
+				</form>
+			<%}%>
+		</div>
+	</section>
+
+	<section class="projectSection">
+		<h2>Your Projects</h2>
+		<div class="fullWidthCollector">
+			<button class="fullWidthButton modalCreator" id="newProject">Start a new project</button>
+			<div class="modal createNew" id="projectForm">
+				<form action="/project" method="post">
+					<input type="text" name="projectName" id="nameEntry" autocomplete="off" required>
+					<input type="submit" value="Create Project">
+				</form>
+			</div>
+		</div>
+
+		<div class="column">
+			<% if (!projects || projects.length === 0){ %>
+			<p>No projects yet!</p>
+			<% } else {
+			projects.forEach(project => { 
+				project.populate('posts')%>
+			<div class="project" id="<%= project.id%>">
+				<div class="projectRow">
+					<h4>
+						<a href="../project/<%= project.id%>" class="dark-bg">
+							<%= project.name %></a>
+					</h4>
+					<p class="projectDate dark-bg">
+						Started: <span class="started">
+							<%= formatDate(project.startDate)%> </span>
+						Last Updated: <span class="updated">
+						<%=formatDate(project.lastUpdate)%>
+						</span>
+					</p>
+					<%if(currentUser && user.id === currentUser.id){%>
+					<span class="deleteProject"><i class="fa fa-trash"></i></span>
+					<%}%>
+				</div>
+				<div class="postRow">
+					<div class="lastPost">
+						<h4>Last Post</h4>
+						<% if (!project.posts || project.posts.length == 0){%>
+						<p>No Posts</p>
+						<%} else {%>
+						<a href="/project/<%=project.id + "/posts/" + project.posts[project.posts.length - 1].id%>">
+							<p>
+								<%= project.posts[project.posts.length - 1].title%>
+							</p>
+						</a>
+						<% } %>
+					</div>
+					<div class="postCount">
+						<p>Posts:
+							<%= project.posts.length %>
+						</p>
+					</div>
+					<div class="status active">
+						<p>Status</p>
+						<% if (user.id == currentUser._id){%>
+						<form action="/project/<%=project.id%>?_method=PUT" method=POST id="statusChange">
+							<select name="project[status]" class="statusSelector">
+							<%for (var i=0; i < statusnames.length; i++){%>
+								<%var selected = (project.status === i) ? 'selected' : ''%>
+								<option value="<%=i%>" <%=selected%>><%=statusnames[i]%></option>
+							<%}%>
+							</select>
+							<button class="modal" type="submit">Save</button>
+						</form>
+						<%} else {%>
+							<p>
+								<%=statusnames[project.status]%>
+							</p>
+						<%}%>
+					</div>
+				</div>
+			</div>
+			<% });
+			}%>
+		</div>
+	</section>
+	<script src="/js/newPage.js"></script>
+	<script src="/js/post.js"></script>
+</div>
+<%- include("../partials/footer.ejs"); %>
