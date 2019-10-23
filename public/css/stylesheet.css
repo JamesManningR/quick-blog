@@ -45,9 +45,14 @@ header .logo {
 	padding: 15px;
 }
 
-.headerElement a{
+.headerElement > *{
+	color: #111;
 	text-decoration: none;
 	padding-right: 20px;
+}
+
+.headerElement > *:hover{
+	cursor: pointer;
 }
 
 .headerElement a:visited {
