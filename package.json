@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "lockfileVersion": 1,
   "requires": true,
-	"scripts": {
-		"start": "node app.js"
-	},
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "accepts": {
       "integrity": "sha1-63d99gEXI6OxTopywIBcjoZ0a9I=",
@@ -73,7 +73,7 @@
       "resolved": "https://registry.npmjs.org/connect-flash/-/connect-flash-0.1.1.tgz",
       "version": "0.1.1"
     },
-    "console-stamp": "^0.2.7",
+    "console-stamp": "^0.2.9",
     "content-disposition": {
       "integrity": "sha1-DPaLud318r55YcOoUXjLhdunjLQ=",
       "resolved": "https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.2.tgz",
@@ -122,7 +122,7 @@
       "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz",
       "version": "1.1.1"
     },
-    "ejs": "^2.6.1",
+    "ejs": "^2.7.1",
     "encodeurl": {
       "integrity": "sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=",
       "resolved": "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz",
@@ -138,8 +138,8 @@
       "resolved": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz",
       "version": "1.8.1"
     },
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "finalhandler": {
       "integrity": "sha512-Y1GUDo39ez4aHAw7MysnUD5JzYX+WaIj8I57kO3aEPT1fFRL4sr7mjei97FgnwhAyyzRYmQZaTHb2+9uZ1dPtg==",
       "requires": {
@@ -264,7 +264,7 @@
       "resolved": "https://registry.npmjs.org/mongodb-core/-/mongodb-core-3.0.8.tgz",
       "version": "3.0.8"
     },
-    "mongoose": "^5.3.1",
+    "mongoose": "^5.7.6",
     "mongoose-legacy-pluralize": {
       "integrity": "sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==",
       "resolved": "https://registry.npmjs.org/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz",
@@ -298,14 +298,14 @@
       "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
       "version": "2.0.0"
     },
-    "multer": "^1.4.1",
+    "multer": "^1.4.2",
     "negotiator": {
       "integrity": "sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=",
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "version": "0.6.1"
     },
-    "nodemon": "^1.18.9",
-    "npm": "^6.5.0",
+    "nodemon": "^1.19.4",
+    "npm": "^6.12.0",
     "on-finished": {
       "integrity": "sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=",
       "requires": {
