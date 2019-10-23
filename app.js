@@ -14,16 +14,15 @@ const express = require("express"),
 	User = require("./models/user"), //Import models
 	Project = require("./models/project"),
 	Post = require("./models/post"),
-	Log = require("./models/log");
+	Log = require("./models/log"),
+	PORT = process.env.PORT,
+	IP = process.env.IP;
 
 //Debug----------------------------------------------------
 
 //Database-------------------------------------------------
 mongoose.set('useFindAndModify', false);
-//mongoose.connect("mongodb://localhost/MakerBlog", {
-//	useNewUrlParser: true
-//});
-mongoose.connect("mongodb://heroku:applemacbookpro10@ds050539.mlab.com:50539/lincsmakerblog", {
+mongoose.connect("mongodb://localhost/MakerBlog", {
 	useNewUrlParser: true
 });
 app.use(bodyParser.urlencoded({
@@ -38,7 +37,7 @@ app.use(methodOverride("_method"));
 
 //PASSPORT-------------------------------------------------
 app.use(require("express-session")({
-	secret: "James is still the best programmer in the world",
+	secret: "Idontknowifthisshouldbehere",
 	resave: false,
 	saveUninitialized: false
 }));
@@ -77,6 +76,6 @@ app.use("*", function (req, res) {
 	res.status(404).redirect("/404");
 });
 
-app.listen(8888, "localhost", function () {
-	console.log("The Blog Server Has Started!");
+app.listen(PORT, IP, function () {
+	console.log(`The Blog Server Has Started on port ${PORT}`);
 });

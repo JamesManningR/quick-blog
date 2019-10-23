@@ -18,10 +18,13 @@
 		<img src="../imgs/Pencil-Pen-100px.png" alt="Company Logo" class="logo"> 
 	</a>
 	
+	<div class="headerElement">
 	<% if (currentUser) { %>
-		<a href="../logout" class="headerElement" id="logout">Logout</a>
-		<a href="/profile/<%=currentUser._id%>" class="headerElement">Your Profile</a>
+			<a href="/profile/<%=currentUser._id%>">Your Profile</a>
+			<a href="../logout" id="logout">Logout</a>
+
 	<% } else { %>
-		<a href="../login" class="headerElement">Log in</a>
+		<a href="../login">Log in</a>
 	<%	}%>
+	</div>
 </header>

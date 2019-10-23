@@ -3,25 +3,30 @@
 }
 
 body {
-	font-family: roboto;
-
+	display: flex;
+	flex-direction: column;
+	--bg-left: #3da795;
+	--bg-right: #30bbb2;
 	margin: 0;
-
 	color: #fafafa;
-	background-image: url(../imgs/maker-pattern.png), -webkit-gradient(linear, left top, right top, from(#00cca5), to(#53e0d7));
-	background-image: url(../imgs/maker-pattern.png), linear-gradient(to right, #00cca5, #53e0d7);
+	background-image: url(../imgs/maker-pattern.png), -webkit-gradient(linear, left top, right top, from(var(--bg-left)), to(var(--bg-right)right));
+	background-image: url(../imgs/maker-pattern.png), linear-gradient(to right, var(--bg-left), var(--bg-right));
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background-size: 150px 150px, auto;
+	font-family: roboto;
 }
+
 
 /*======================================
 ================Header==================
 ========================================*/
 
 header {
-	width: 100%;
-	height: 50px;
-	margin: 0;
+	display: flex;
+	flex-grow: 0;
+	flex-basis: 100%;
+	justify-content: space-between;
+
 	margin-bottom: 20px;
 
 	background-color: #f0fafa;
@@ -35,16 +40,17 @@ header .logo {
 	margin-left: 20px;
 }
 
-header .headerElement {
-	float: right;
 
-	padding: 14px;
-	padding-right: 20px;
-
-	text-decoration: none;
+.headerElement{
+	padding: 15px;
 }
 
-header .headerElement:visited {
+.headerElement a{
+	text-decoration: none;
+	padding-right: 20px;
+}
+
+.headerElement a:visited {
 	color: #111;
 }
 
@@ -140,6 +146,16 @@ h2 {
 /*======================================
 =================Home===================
 ========================================*/
+.home > *{
+	display: flex;
+	flex-direction: column;
+}
+
+.homeImg{
+	flex-basis: 100%;
+	margin-bottom: 0;
+	border-bottom: 5px solid grey;
+}
 
 .homeText {
 	background-color: #FB0;
@@ -153,25 +169,23 @@ h2 {
 }
 
 .about {
-	padding-top: 25px;
-	display: grid;
-	grid-template-areas: 'card card card';
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	color: #111;
-	background-color: #F6F6F6;
-	height: 200px;
+	background-color: #fff;
+	color: black;
+	padding: 40px 20px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .card {
-	margin: 0 40px;
-	width: 150px;
+	flex: 0 1 33%;
 	text-align: center;
 }
 
 .card img {
 	height: 125px;
+	padding-bottom: 10px ;
 }
 
 
@@ -553,7 +567,7 @@ h2 {
 	font-weight: 400;
 
 	margin: 0;
-	padding 10px 20px;
+	padding: 10px 20px;
 }
 
 #logger .fa-plus {
