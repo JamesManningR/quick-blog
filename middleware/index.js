@@ -74,10 +74,9 @@ var middlewareObj = {
 			.exec(function (err, foundPost) {
 				foundPost.logs.forEach(function (log) {
 					middlewareObj.destroyLog(log.id);
-					foundPost.remove();
 				});
+				foundPost.deleteOne();
 			})
-		post.remove()
 	},
 
 	destroyProject: function (projectID) {
@@ -87,11 +86,9 @@ var middlewareObj = {
 			.exec(function (err, foundProject) {
 				foundProject.posts.forEach(function (post) {
 					middlewareObj.destroyPost(post.id);
-					foundProject.remove();
 				});
+				foundProject.deleteOne();
 			})
-		project.remove();
-
 	},
 
 	destroyUser: function (userID) {
@@ -101,10 +98,9 @@ var middlewareObj = {
 			.exec(function (err, foundUser) {
 				foundUser.projects.forEach(function (project) {
 					middlewareObj.destroyProject(project.id);
-					foundUser.remove();
 				});
+				foundUser.deleteOne();
 			})
-		user.remove();
 	},
 	
 	//Check File Type

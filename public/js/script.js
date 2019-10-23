@@ -1,5 +1,4 @@
-console.log("Im here");
-
 $('#login').on('click', function(){
-    $('#loginModal').fadeIn()
+    $('#loginModal').fadeIn();
+    console.log("hahaha")
 });
