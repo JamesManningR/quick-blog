@@ -305,7 +305,7 @@
       "version": "0.6.1"
     },
     "nodemon": "^1.19.4",
-    "npm": "^6.12.0",
+    "npm": "^6.13.4",
     "on-finished": {
       "integrity": "sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=",
       "requires": {
